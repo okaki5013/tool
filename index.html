@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tool Collection</title>
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #e5e5e5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      /* 元の青い光の代わりに、虹色のグラデーションをanimationで表現 */
+      text-shadow: 0 0 8px rgba(255, 0, 0, 0.7); /* 初期色 */
+      animation: rainbow-shadow 5s infinite alternate;
+    }
+
+    @keyframes rainbow-shadow {
+      0% { text-shadow: 0 0 8px rgba(255, 0, 0, 0.7); } /* 赤 */
+      16% { text-shadow: 0 0 8px rgba(255, 165, 0, 0.7); } /* オレンジ */
+      33% { text-shadow: 0 0 8px rgba(255, 255, 0, 0.7); } /* 黄色 */
+      50% { text-shadow: 0 0 8px rgba(0, 128, 0, 0.7); } /* 緑 */
+      66% { text-shadow: 0 0 8px rgba(0, 0, 255, 0.7); } /* 青 */
+      83% { text-shadow: 0 0 8px rgba(75, 0, 130, 0.7); } /* インディゴ */
+      100% { text-shadow: 0 0 8px rgba(238, 130, 238, 0.7); } /* バイオレット */
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .tool-card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      /* 元の青い光の代わりに、虹色のグラデーションをanimationで表現 */
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* 初期色 */
+      transition: 0.3s;
+      animation: rainbow-box-shadow 5s infinite alternate; /* カードの影にも適用 */
+    }
+
+    .tool-card:hover {
+      transform: scale(1.05);
+      /* hover時の影も虹色に */
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); /* 初期色 */
+      animation: rainbow-hover-shadow 5s infinite alternate; /* hover時の影にも適用 */
+    }
+
+    @keyframes rainbow-box-shadow {
+        0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+        16% { box-shadow: 0 0 15px rgba(255, 165, 0, 0.4); }
+        33% { box-shadow: 0 0 15px rgba(255, 255, 0, 0.4); }
+        50% { box-shadow: 0 0 15px rgba(0, 128, 0, 0.4); }
+        66% { box-shadow: 0 0 15px rgba(0, 0, 255, 0.4); }
+        83% { box-shadow: 0 0 15px rgba(75, 0, 130, 0.4); }
+        100% { box-shadow: 0 0 15px rgba(238, 130, 238, 0.4); }
+    }
+
+    @keyframes rainbow-hover-shadow {
+        0% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); }
+        16% { box-shadow: 0 0 25px rgba(255, 165, 0, 0.8); }
+        33% { box-shadow: 0 0 25px rgba(255, 255, 0, 0.8); }
+        50% { box-shadow: 0 0 25px rgba(0, 128, 0, 0.8); }
+        66% { box-shadow: 0 0 25px rgba(0, 0, 255, 0.8); }
+        83% { box-shadow: 0 0 25px rgba(75, 0, 130, 0.8); }
+        100% { box-shadow: 0 0 25px rgba(238, 130, 238, 0.8); }
+    }
+
+    .tool-card h3 {
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .tool-card p {
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-bottom: 15px;
+    }
+
+    .download-btn {
+      background: #5865F2;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #4752C4;
+      /* hover時のボタンの影も虹色に */
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); /* 初期色 */
+      animation: rainbow-btn-hover-shadow 5s infinite alternate; /* hover時のボタンの影にも適用 */
+    }
+
+    @keyframes rainbow-btn-hover-shadow {
+        0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); }
+        16% { box-shadow: 0 0 15px rgba(255, 165, 0, 0.9); }
+        33% { box-shadow: 0 0 15px rgba(255, 255, 0, 0.9); }
+        50% { box-shadow: 0 0 15px rgba(0, 128, 0, 0.9); }
+        66% { box-shadow: 0 0 15px rgba(0, 0, 255, 0.9); }
+        83% { box-shadow: 0 0 15px rgba(75, 0, 130, 0.9); }
+        100% { box-shadow: 0 0 15px rgba(238, 130, 238, 0.9); }
+    }
+  </style>
+</head>
+<body>
+  <header>🛠️ Web Tool by AK</header>
+
+  <div class="tool-grid">
+    <div class="tool-card">
+      <h3>トークン荒らし</h3>
+      <p>複数トークンで荒らせる</p>
+      <a href="https://okaki5013.github.io/jjmm/" class="download-btn">webhook</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>グループスパム</h3>
+      <p>グループスパム</p>
+      <a href="https://okaki5013.github.io/aktroll/" class="download-btn">Grupe spam</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>公式サイト</h3>
+      <p>公式サイト</p>
+      <a href="https://okaki5013.github.io/aksite/" class="download-btn">GO</a>
+    </div>
+  </div>
+</body>
+</html>
